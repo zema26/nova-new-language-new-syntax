@@ -1,0 +1,56 @@
+iTerra is universal language that unifies source code and data in one seamless format
+
+-------------------------------------------------------------------------------------
+
+<code> Nova  //new programming language
+
+	<module> //name
+
+		// Nova source code
+
+	</module>
+
+</code>
+
+
+<data> JSON
+
+	{"a":1, "B":2, "C":[1,2,3]} //and other JSON data
+
+</data>
+
+<data> XML
+
+	<tag> content </tag> //and other XML data
+
+</data>
+
+------------------------------------------------------------------------------------
+
+data access inside Nova source code:
+
+data.json. ...
+
+data.xml. ...
+
+
+connecting to another files from iTerra:
+
+{link} code1.nova {/link}  //for source code
+
+{link} data1.itr {/link}  //for data
+
+{link} code1-data1.itr {/link} //for both
+
+
+in oop class' objects data (data members)  
+
+are combined with code (member functions)
+
+in iTerra there is the same thing
+
+only on more general level:
+
+entire source code and all data for processing 
+
+by that code are contained in one file

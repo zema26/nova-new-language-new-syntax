@@ -1,0 +1,205 @@
+
+📖 NovaBook
+
+Official User Guide for the Nova Programming Language
+
+Nova is designed with a primary goal: to make code flow from left to right, much like natural writing.
+1. Basics
+2. Structure
+3. Control Flow
+4. Advanced
+5. OOP
+1. The Basics: Syntax & Variables
+
+First, let's cover the fundamental building blocks of the Nova language.
+Key Concepts
+
+    Reversed Assignment Operator: Instead of variable = value, Nova uses value : variable. This allows for a natural left-to-right flow (e.g., a + b : a).
+    Tagged Keywords: Control flow is enclosed in curly braces, like a markup language. Examples: <while>, <fun>, <if>.
+    Comments: Single-line comments begin with //.
+
+Data Types & Operators
+
+Nova supports standard data types:
+
+    int: integer
+    float: float decimal
+    char: character
+    string: array of "char"
+    bool: boolean "true" or "false"
+
+Variable Declaration
+
+    Declaration only: int i
+    With initialization: int i(0), char c("a"), bool l(true).
+
+2. Program Structure & Functions
+
+Nova programs are organized into modules and functions.
+Modules
+
+A program is defined within a <module> block.
+
+<module> Euclidean
+    // module content
+</module>
+
+Function Declaration
+
+Function declarations are reversed to fit the flow: <fun> inputs : name return_type.
+
+    Example: <fun> int a, int b : Euclid int
+    Calling: a, b : f
+    Main Entry: <fun> string args[] : main int
+
+Example: Euclidean Program
+
+This full example demonstrates a simple module, function declaration, and Nova's powerful I/O syntax.
+
+<module> Euclidean
+
+    <fun> int a, int b : Euclid int
+        <while> b != 0
+            <if> a > b
+                a - b : a
+            <else>
+                b - a : b
+            </else>
+            </if>
+        </while>
+
+        <return> a </return>
+    </fun>
+
+    <fun> string args[] : main int
+        int a, b
+        // seamless input to output syntax
+        in : a, b : Euclid : out
+    </fun>
+
+</module>
+
+Notice the line: in : a, b : Euclid : out. It takes input, assigns to variables, passes them to the function, and sends the result to output in one step.
+
+
+3. Control Flow & Arrays
+Conditional: <if> / <else>
+
+<if> a > b
+    a - b : a
+<else>
+    b - a : b
+</else>
+</if>
+
+Loop: <for>
+
+Nova uses specific syntax: <for> i(0)++ < n.
+
+    i(0): Initialize iterator to 0.
+    ++: Step by 1.
+    < n: Continue while i is less than n.
+
+<for> k(0)++ < n
+    true : primes[k]
+</for>
+
+Arrays
+
+    Declaration: int a[n]
+    Initialization: int a[4]([1, 2, 3, 4])
+    Access: a[i]
+
+4. Advanced: Sieve of Eratosthenes
+
+The following program, `primes`, uses arrays and loops to implement the Sieve of Eratosthenes algorithm.
+
+<module> primes 
+
+    <fun> int n : Eratosthenes
+            
+        bool primes[n]
+        int l(0), i(0), index_square(3)         
+        int first, last, factor 
+
+        <for> k(0)++ < n
+            true : primes[k] 
+        </for>   
+            
+        <while> index_square < n         
+            <if> primes[i]             
+
+                0 + index_square : first
+                0 + n : last 
+                i + i + 3 : factor
+                false : primes[first] 
+
+                <while> last - first > factor 
+                    first + factor : first
+                    false : primes[first]
+                </while>
+                
+            </if>  
+            i + 1 : i
+            2 * i * (i + 3) + 3 : index_square
+        </while>          
+
+        ' 2' : out
+        <for> i(0)++ < n
+            <if> primes[i] 
+                <if> 2 * i + 3 > n 
+                        break
+                </if>
+
+                ' ' 2 * i + 3 : out
+                l + 1 : l
+
+                <if> l % 10 == 0 
+                    '\n' : out
+                </if>   
+        
+            </if>
+        </for>
+
+        '\n number : '  l  :  out
+    </fun>
+    
+    <fun> main int
+        1000 : Eratosthenes
+    </fun>
+</module>
+
+5. OOP: Classes
+
+Nova also supports classes, allowing for object-oriented design.
+
+<module> Euclidean
+
+    <class> GCD
+        int a, int b	//data members
+
+        <fun> int a, int b : Euclid int	//member function  
+            <while> b != 0
+                <if> a > b
+                    a - b : a
+                <else>
+                    b - a : b
+                </else>
+                </if>
+            </while>
+            <return> a </return>
+        </fun>
+    </class>
+
+    <fun> string args[] : main int
+
+        GCD N	//object N of class GCD
+
+        // Direct input to object members : method : output
+        in : N.a, N.b : N.Euclid : out
+
+    </fun>
+
+</module>
+
+Generated from NovaTutorial.md | Nova Programming Language

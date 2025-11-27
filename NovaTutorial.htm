@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaBook | Nova Language Guide</title>
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-tertiary: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent: #00e5ff;
+            --code-bg: #181818;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--accent), #bd93f9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-primary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--bg-tertiary);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Content Sections */
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        /* Code Blocks - Clean styling without JS injection */
+        pre {
+            background-color: var(--code-bg);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--bg-tertiary);
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.95rem;
+            color: #f8f8f2;
+        }
+
+        /* Inline code styling */
+        p code, li code {
+            background-color: var(--bg-tertiary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            border-top: 1px solid var(--bg-tertiary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            nav { gap: 10px; }
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📖 NovaBook</h1>
+            <p class="subtitle">Official User Guide for the Nova Programming Language</p>
+            <p style="margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Nova is designed with a primary goal: to make code flow from left to right, much like natural writing.
+            </p>
+        </header>
+
+        <nav>
+            <a href="#basics">1. Basics</a>
+            <a href="#structure">2. Structure</a>
+            <a href="#control">3. Control Flow</a>
+            <a href="#advanced">4. Advanced</a>
+            <a href="#oop">5. OOP</a>
+        </nav>
+
+        <main>
+            <section id="basics">
+                <h2>1. The Basics: Syntax & Variables</h2>
+                <p>First, let's cover the fundamental building blocks of the Nova language.</p>
+
+                <h3>Key Concepts</h3>
+                <ul>
+                    <li><strong>Reversed Assignment Operator:</strong> Instead of <code>variable = value</code>, Nova uses <code>value : variable</code>. This allows for a natural left-to-right flow (e.g., <code>a + b : a</code>).</li>
+                    <li><strong>Tagged Keywords:</strong> Control flow is enclosed in curly braces, like a markup language. Examples: <code>&lt;while&gt;</code>, <code>&lt;fun&gt;</code>, <code>&lt;if&gt;</code>.</li>
+                    <li><strong>Comments:</strong> Single-line comments begin with <code>//</code>.</li>
+                </ul>
+
+                <h3>Data Types & Operators</h3>
+                <p>Nova supports standard data types:</p>
+                <ul>
+                    <li><code>int</code>: integer</li>
+                    <li><code>float</code>: float decimal</li>
+                    <li><code>char</code>: character</li>
+                    <li><code>string</code>: array of "char"</li>
+                    <li><code>bool</code>: boolean "true" or "false"</li>
+                </ul>
+
+                <h3>Variable Declaration</h3>
+                <ul>
+                    <li><strong>Declaration only:</strong> <code>int i</code></li>
+                    <li><strong>With initialization:</strong> <code>int i(0)</code>, <code>char c("a")</code>, <code>bool l(true)</code>.</li>
+                </ul>
+            </section>
+
+            <hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
+
+            <section id="structure">
+                <h2>2. Program Structure & Functions</h2>
+                <p>Nova programs are organized into modules and functions.</p>
+
+                <h3>Modules</h3>
+                <p>A program is defined within a <code>&lt;module&gt;</code> block.</p>
+<pre><code>&lt;module&gt; Euclidean
+    // module content
+&lt;/module&gt;</code></pre>
+
+                <h3>Function Declaration</h3>
+                <p>Function declarations are reversed to fit the flow: <code>&lt;fun&gt; inputs : name return_type</code>.</p>
+                <ul>
+                    <li><strong>Example:</strong> <code>&lt;fun&gt; int a, int b : Euclid int</code></li>
+                    <li><strong>Calling:</strong> <code>a, b : f</code></li>
+                    <li><strong>Main Entry:</strong> <code>&lt;fun&gt; string args[] : main int</code></li>
+                </ul>
+
+                <h3>Example: Euclidean Program</h3>
+                <p>This full example demonstrates a simple module, function declaration, and Nova's powerful I/O syntax.</p>
+
+<pre><code>&lt;module&gt; Euclidean
+
+    &lt;fun&gt; int a, int b : Euclid int
+        &lt;while&gt; b != 0
+            &lt;if&gt; a > b
+                a - b : a
+            &lt;else&gt;
+                b - a : b
+            &lt;/else&gt;
+            &lt;/if&gt;
+        &lt;/while&gt;
+
+        &lt;return&gt; a &lt;/return&gt;
+    &lt;/fun&gt;
+
+    &lt;fun&gt; string args[] : main int
+        int a, b
+        // seamless input to output syntax
+        in : a, b : Euclid : out
+    &lt;/fun&gt;
+
+&lt;/module&gt;</code></pre>
+                <p>Notice the line: <code>in : a, b : Euclid : out</code>. It takes input, assigns to variables, passes them to the function, and sends the result to output in one step.</p>
+            </section>
+
+            <hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
+
+            <section id="control">
+                <h2>3. Control Flow & Arrays</h2>
+
+                <h3>Conditional: &lt;if&gt; / &lt;else&gt;</h3>
+<pre><code>&lt;if&gt; a > b
+    a - b : a
+&lt;else&gt;
+    b - a : b
+&lt;/else&gt;
+&lt;/if&gt;</code></pre>
+
+                <h3>Loop: &lt;for&gt;</h3>
+                <p>Nova uses specific syntax: <code>&lt;for&gt; i(0)++ < n</code>.</p>
+                <ul>
+                    <li><code>i(0)</code>: Initialize iterator to 0.</li>
+                    <li><code>++</code>: Step by 1.</li>
+                    <li><code>&lt; n</code>: Continue while i is less than n.</li>
+                </ul>
+
+<pre><code>&lt;for&gt; k(0)++ < n
+    true : primes[k]
+&lt;/for&gt;</code></pre>
+
+                <h3>Arrays</h3>
+                <ul>
+                    <li><strong>Declaration:</strong> <code>int a[n]</code></li>
+                    <li><strong>Initialization:</strong> <code>int a[4]([1, 2, 3, 4])</code></li>
+                    <li><strong>Access:</strong> <code>a[i]</code></li>
+                </ul>
+            </section>
+
+            <hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
+
+            <section id="advanced">
+                <h2>4. Advanced: Sieve of Eratosthenes</h2>
+                <p>The following program, `primes`, uses arrays and loops to implement the Sieve of Eratosthenes algorithm.</p>
+
+<pre><code>&lt;module&gt; primes 
+
+    &lt;fun&gt; int n : Eratosthenes
+            
+        bool primes[n]
+        int l(0), i(0), index_square(3)         
+        int first, last, factor 
+
+        &lt;for&gt; k(0)++ < n
+            true : primes[k] 
+        &lt;/for&gt;   
+            
+        &lt;while&gt; index_square < n         
+            &lt;if&gt; primes[i]             
+
+                0 + index_square : first
+                0 + n : last 
+                i + i + 3 : factor
+                false : primes[first] 
+
+                &lt;while&gt; last - first > factor 
+                    first + factor : first
+                    false : primes[first]
+                &lt;/while&gt;
+                
+            &lt;/if&gt;  
+            i + 1 : i
+            2 * i * (i + 3) + 3 : index_square
+        &lt;/while&gt;          
+
+        ' 2' : out
+        &lt;for&gt; i(0)++ < n
+            &lt;if&gt; primes[i] 
+                &lt;if&gt; 2 * i + 3 > n 
+                        break
+                &lt;/if&gt;
+
+                ' ' 2 * i + 3 : out
+                l + 1 : l
+
+                &lt;if&gt; l % 10 == 0 
+                    '\n' : out
+                &lt;/if&gt;   
+        
+            &lt;/if&gt;
+        &lt;/for&gt;
+
+        '\n number : '  l  :  out
+    &lt;/fun&gt;
+    
+    &lt;fun&gt; main int
+        1000 : Eratosthenes
+    &lt;/fun&gt;
+&lt;/module&gt;</code></pre>
+            </section>
+
+            <hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
+
+            <section id="oop">
+                <h2>5. OOP: Classes</h2>
+                <p>Nova also supports classes, allowing for object-oriented design.</p>
+
+<pre><code>&lt;module&gt; Euclidean
+
+    &lt;class&gt; GCD
+        int a, int b
+
+        &lt;fun&gt; int a, int b : Euclid int
+            &lt;while&gt; b != 0
+                &lt;if&gt; a > b
+                    a - b : a
+                &lt;else&gt;
+                    b - a : b
+                &lt;/else&gt;
+                &lt;/if&gt;
+            &lt;/while&gt;
+            &lt;return&gt; a &lt;/return&gt;
+        &lt;/fun&gt;
+    &lt;/class&gt;
+
+    &lt;fun&gt; string args[] : main int
+        GCD N
+        // Direct input to object members : method : output
+        in : N.a, N.b : N.Euclid : out
+    &lt;/fun&gt;
+
+&lt;/module&gt;</code></pre>
+            </section>
+        </main>
+
+        <footer>
+            <p>Generated from NovaTutorial.md | Nova Programming Language</p>
+        </footer>
+    </div>
+</body>
+</html>

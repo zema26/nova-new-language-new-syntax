@@ -1,0 +1,32 @@
+<module> Euclidean
+
+    <class> GCD    //class declaration
+
+        int a, int b    //data members
+
+        <fun> int a, int b : Euclid int    //member function
+
+            <while> b!=0
+               <if> a > b
+                   a - b - > a
+                <else>
+                   b - a : b
+                </else>
+                </if>
+            </while>
+
+            <return> a </return>
+
+        </fun>
+    </class>
+
+
+    <fun> string args[] : main int    //main function
+
+        GCD N    //object N of class GCD
+
+        in : N.a, N.b : N.Euclid : out    //input, output in one line
+
+    </fun>
+
+</module>
