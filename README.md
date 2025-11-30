@@ -295,6 +295,8 @@ Nova also supports classes, allowing for object-oriented design.
 </module>
 ```
 
+Once again, the `main` function showcases Nova's natural flow.  The line `in : N.a, N.b : N.Euclid : out` reads input directly into the object's data members (`N.a`, `N.b`), calls the object's member function (`N.Euclid`), and prints the returned result.
+
 -----
 ## 6\.Module Interface  
 
@@ -337,5 +339,5 @@ In the beginning interface gives module access to standard I/O and then access t
 
  
 
- Once again, the `main` function showcases Nova's natural flow.  The line `in : N.a, N.b : N.Euclid : out` reads input directly into the object's data members (`N.a`, `N.b`), calls the object's member function (`N.Euclid`), and prints the returned result.
+ 
 
