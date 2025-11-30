@@ -9,6 +9,8 @@ Nova is designed with a primary goal: to make code flow from left to right, much
 3. Control Flow
 4. Advanced
 5. OOP
+6. Interfaces
+
 1. The Basics: Syntax & Variables
 
 First, let's cover the fundamental building blocks of the Nova language.
@@ -81,8 +83,8 @@ This full example demonstrates a simple module, function declaration, and Nova's
 
 Notice the line: in : a, b : Euclid : out. It takes input, assigns to variables, passes them to the function, and sends the result to output in one step.
 
-
 3. Control Flow & Arrays
+
 Conditional: <if> / <else>
 
 <if> a > b
@@ -176,9 +178,9 @@ Nova also supports classes, allowing for object-oriented design.
 <module> Euclidean
 
     <class> GCD
-        int a, int b	//data members
+        int a, int b
 
-        <fun> int a, int b : Euclid int	//member function  
+        <fun> int a, int b : Euclid int
             <while> b != 0
                 <if> a > b
                     a - b : a
@@ -192,14 +194,46 @@ Nova also supports classes, allowing for object-oriented design.
     </class>
 
     <fun> string args[] : main int
-
-        GCD N	//object N of class GCD
-
+        GCD N
         // Direct input to object members : method : output
         in : N.a, N.b : N.Euclid : out
-
     </fun>
 
 </module>
+
+6. Module Interface
+
+Nova modules are connected through Interfaces.
+
+Interface
+
+Every module can be connected to other modules through interfaces. Interface goes before module itself
+
+Example: Interface and Module
+
+This example demonstrates flexibility and interconnection of module using mentioned before Euclidian algorithm
+
+<interface> 
+
+    <link> in2out.nova </link>  //using standard input and output
+    <link> module2.nova </link>  //connecting to another module
+
+    <fun> int a, int b : Euclid int </fun>  //function that can be used by another modules
+
+</interface>
+
+<module> Euclidean
+
+    <fun> int a, int b : Euclid int
+
+    ...
+
+    </fun>
+
+    ...
+
+</module>
+
+In the beginning interface gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is .nova
 
 Generated from NovaTutorial.md | Nova Programming Language

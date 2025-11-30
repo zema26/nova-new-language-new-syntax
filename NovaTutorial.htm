@@ -185,6 +185,7 @@
             <a href="#control">3. Control Flow</a>
             <a href="#advanced">4. Advanced</a>
             <a href="#oop">5. OOP</a>
+            <a href="#inter">6. Interfaces</a>
         </nav>
 
         <main>
@@ -391,6 +392,42 @@
 
 &lt;/module&gt;</code></pre>
             </section>
+
+<section id="inter">
+                <h2>6. Module Interface</h2>
+                <p>Nova modules are connected through Interfaces.</p>
+
+                <h3>Interface</h3>
+                <p>Every module can be connected to other modules through interfaces. Interface goes before module itself</p>
+                <h3>Example: Interface and Module</h3>
+                <p>This example demonstrates flexibility and interconnection of module using mentioned before <code>Euclidian</code> algorithm</p>
+
+<pre><code>&lt;interface&gt; 
+
+    &lt;link&gt; in2out.nova &lt;/link&gt;  //using standard input and output
+    &lt;link&gt; module2.nova &lt;/link&gt;  //connecting to another module
+
+    &lt;fun&gt; int a, int b : Euclid int &lt;/fun&gt;  //function that can be used by another modules
+
+&lt;/interface&gt;
+
+&lt;module&gt; Euclidean
+
+    &lt;fun&gt; int a, int b : Euclid int
+
+    ...
+
+    &lt;/fun&gt;
+
+    ...
+
+&lt;/module&gt;
+
+</code></pre>
+<p> In the beginning interface gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is <code> .nova </code></p>
+            </section>
+
+
         </main>
 
         <footer>
