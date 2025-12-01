@@ -186,6 +186,7 @@
             <a href="#advanced">4. Advanced</a>
             <a href="#oop">5. OOP</a>
             <a href="#inter">6. Interfaces</a>
+            <a href="#file">7. File System</a>
         </nav>
 
         <main>
@@ -392,7 +393,7 @@
 
 &lt;/module&gt;</code></pre>
             </section>
-
+<hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
 <section id="inter">
                 <h2>6. Module Interface</h2>
                 <p>Nova modules are connected through Interfaces.</p>
@@ -422,10 +423,47 @@
     ...
 
 &lt;/module&gt;
-
 </code></pre>
 <p> In the beginning interface gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is <code> .nova </code></p>
             </section>
+
+<hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
+
+<section id="file">
+
+    <h2>7. File System</h2>
+
+        <h3>File Declaration</h3>
+
+<p><code>file f(name, type, options)</code> - file declaration and creating</p>
+
+            <ul>
+                    <li>name includes path</li>
+                    <li>type can be: bin, txt, or hex</li>
+                    <li>options: r - read, w - write</li>
+            </ul>
+
+<h3> Example: writing and reading text file</h3>
+<pre><code>
+file f("Readme.md", txt, wr+)  //creating text file
+string s //srtring for reading and writing
+
+f.open
+&lt;while&gt; s  //string for writing exists like reading "in : s" from standard input
+    s : f  //writing string to file
+&lt;/while&gt;
+f.close
+
+f.open
+&lt;while&gt; not f.eof  //reading
+    f : s  //reading string from file
+&lt;/while&gt;
+f.close
+
+</code></pre>
+
+
+</section>
 
 
         </main>

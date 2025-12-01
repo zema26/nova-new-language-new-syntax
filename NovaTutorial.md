@@ -336,4 +336,41 @@ This example demonstrates flexibility and interconnection of module using mentio
 ```
 
 In the beginning interface gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is `.nova`
-           
+
+
+-----
+
+## 7\.File System
+
+### File Declaration
+
+`file f(name, type, options)` - file declaration and creating
+
+* name includes path
+* type can be: bin, txt, or hex
+* options: r - read, w - write
+
+### Example: writing and reading text file
+
+```Nova
+
+file f("Readme.md", txt, wr+)  //creating text file
+string s //srtring for reading and writing
+
+f.open
+<while> s  //string for writing exists like reading "in : s" from standard input
+    s : f  //writing string to file
+</while>
+f.close
+
+f.open
+<while> not f.eof  //reading
+    f : s  //reading string from file
+</while>
+f.close
+
+```
+
+
+
+
