@@ -370,7 +370,10 @@ f.close
 
 ```
 
- 
+-----
 
- 
+## Origins
+
+* **Nova** language has its roots in **SGML** and  **HTML** markup languages and **C** and **Pascal** programming languages
+* Tagged keywords `<while>` from **HTML**, variable declaration `int i` from **C**, and assignment operator `a : b (b := a)` from **Pascal** 
 
