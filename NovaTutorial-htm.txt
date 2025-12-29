@@ -1,5 +1,5 @@
 
-📖 NovaBook
+NovaBook
 
 Official User Guide for the Nova Programming Language
 
@@ -9,7 +9,9 @@ Nova is designed with a primary goal: to make code flow from left to right, much
 3. Control Flow
 4. Advanced
 5. OOP
-6. Interfaces
+6. Intermodular
+7. File system
+    Origins
 
 1. The Basics: Syntax & Variables
 
@@ -60,7 +62,7 @@ This full example demonstrates a simple module, function declaration, and Nova's
 
 <module> Euclidean
 
-    <fun> int a, int b : Euclid int
+    <fun> int a, int b : Euclid int //function with type int
         <while> b != 0
             <if> a > b
                 a - b : a
@@ -73,7 +75,7 @@ This full example demonstrates a simple module, function declaration, and Nova's
         <return> a </return>
     </fun>
 
-    <fun> string args[] : main int
+    <fun> string args[] : main int  //main function
         int a, b
         // seamless input to output syntax
         in : a, b : Euclid : out
@@ -166,7 +168,7 @@ The following program, `primes`, uses arrays and loops to implement the Sieve of
         '\n number : '  l  :  out
     </fun>
     
-    <fun> main int
+    <fun> main int   //main function
         1000 : Eratosthenes
     </fun>
 </module>
@@ -178,9 +180,9 @@ Nova also supports classes, allowing for object-oriented design.
 <module> Euclidean
 
     <class> GCD
-        int a, int b
+        int a, int b //data members
 
-        <fun> int a, int b : Euclid int
+        <fun> int a, int b : Euclid int   //member function
             <while> b != 0
                 <if> a > b
                     a - b : a
@@ -193,34 +195,34 @@ Nova also supports classes, allowing for object-oriented design.
         </fun>
     </class>
 
-    <fun> string args[] : main int
-        GCD N
+    <fun> string args[] : main int  //main function
+        GCD N    //object N of class GCD
         // Direct input to object members : method : output
         in : N.a, N.b : N.Euclid : out
     </fun>
 
 </module>
 
-6. Module Interface
+6. Intermodular
 
-Nova modules are connected through Interfaces.
+Nova modules are connected through Intermodulars.
 
-Interface
+Intermodular
 
-Every module can be connected to other modules through interfaces. Interface goes before module itself
+Every module can be connected to other modules through intermodulars. Intermodular goes before module itself
 
-Example: Interface and Module
+Example: Intermodular
 
 This example demonstrates flexibility and interconnection of module using mentioned before Euclidian algorithm
 
-<interface> 
+<intermodular> 
 
     <link> in2out.nova </link>  //using standard input and output
     <link> module2.nova </link>  //connecting to another module
 
     <fun> int a, int b : Euclid int </fun>  //function that can be used by another modules
 
-</interface>
+</intermodular>
 
 <module> Euclidean
 
@@ -234,7 +236,7 @@ This example demonstrates flexibility and interconnection of module using mentio
 
 </module>
 
-In the beginning interface gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is .nova
+In the beginning intermodular gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is .nova
 
 
 7. File System
@@ -249,6 +251,7 @@ file f(name, type, options) - file declaration and creating
 
 Example: writing and reading text file
 
+Code begins:
 
 file f("Readme.md", txt, wr+)  //creating text file
 string s //srtring for reading and writing
@@ -265,6 +268,7 @@ f.open
 </while>
 f.close
 
+Code ends 
 
 Origins
 

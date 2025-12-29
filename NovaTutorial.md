@@ -298,28 +298,28 @@ Nova also supports classes, allowing for object-oriented design.
  Once again, the `main` function showcases Nova's natural flow.  The line `in : N.a, N.b : N.Euclid : out` reads input directly into the object's data members (`N.a`, `N.b`), calls the object's member function (`N.Euclid`), and prints the returned result.
 
 -----
-## 6\.Module Interface  
+## 6\.Intermodular
 
-Nova modules are connected through Interfaces.
+Nova modules are connected through Intermodulars.
 
-### Interface
+### Intermodular
 
-Every module can be connected to other modules through interfaces. Interface goes before module itself
+Every module can be connected to other modules through intermodulars. Intermodular goes before module itself
 
-### Example: Interface and Module
+### Example: Intermodular and Module
 
 This example demonstrates flexibility and interconnection of module using mentioned before `Euclidian` algorithm
 
 ```Nova
 
-<interface>
+<intermodular>
 
    <link> in2out.nova </link>  //using standard input and output
    <link> module2.nova </link>  //connecting to another module
 
     <fun> int a, int b : Euclid int </fun>  //function that can be used by another modules
 
-</interface>
+</intermodular>
 
 <module> Euclidean
 
@@ -335,7 +335,7 @@ This example demonstrates flexibility and interconnection of module using mentio
 
 ```
 
-In the beginning interface gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is `.nova`
+In the beginning intermodular gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is `.nova`
 
 
 -----

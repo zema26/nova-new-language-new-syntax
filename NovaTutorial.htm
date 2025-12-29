@@ -185,7 +185,7 @@
             <a href="#control">3. Control Flow</a>
             <a href="#advanced">4. Advanced</a>
             <a href="#oop">5. OOP</a>
-            <a href="#inter">6. Interfaces</a>
+            <a href="#inter">6. Intermodular</a>
             <a href="#file">7. File System</a>
             <a href="#origins">Origins</a>
         </nav>
@@ -396,22 +396,22 @@
             </section>
 <hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
 <section id="inter">
-                <h2>6. Module Interface</h2>
-                <p>Nova modules are connected through Interfaces.</p>
+                <h2>6. Intermodular</h2>
+                <p>Nova modules are connected through Intermodulars.</p>
 
-                <h3>Interface</h3>
-                <p>Every module can be connected to other modules through interfaces. Interface goes before module itself</p>
-                <h3>Example: Interface and Module</h3>
+                <h3>Intermodular</h3>
+                <p>Every module can be connected to other modules through intermodulars. Intermodular goes before module itself</p>
+                <h3>Example: Intermodular and Module</h3>
                 <p>This example demonstrates flexibility and interconnection of module using mentioned before <code>Euclidian</code> algorithm</p>
 
-<pre><code>&lt;interface&gt; 
+<pre><code>&lt;intermodular&gt; 
 
     &lt;link&gt; in2out.nova &lt;/link&gt;  //using standard input and output
     &lt;link&gt; module2.nova &lt;/link&gt;  //connecting to another module
 
     &lt;fun&gt; int a, int b : Euclid int &lt;/fun&gt;  //function that can be used by another modules
 
-&lt;/interface&gt;
+&lt;/intermodular&gt;
 
 &lt;module&gt; Euclidean
 
@@ -425,7 +425,7 @@
 
 &lt;/module&gt;
 </code></pre>
-<p> In the beginning interface gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is <code> .nova </code></p>
+<p> In the beginning intemodular gives module access to standard I/O and then access to functions of another module. Also declaration of function that can be used by another module. Notice that source code extension of Nova modules is <code> .nova </code></p>
             </section>
 
 <hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
