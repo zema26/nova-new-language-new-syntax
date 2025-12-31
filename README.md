@@ -372,6 +372,49 @@ f.close
 ```
 -----
 
+## 8\.Integration with HTML
+
+Nova code can be used inside HTML because they have same syntax.
+
+### Integration
+
+Just put Nova code inside `<Nova> ... </Nova>` block inside of HTML
+
+### Example: Integration and HTML
+
+This example demonstrates flexibility and interconnection of Nova language with HTML
+
+```Nova
+
+<html>   
+     ...
+
+<Nova>
+
+<module> Euclidean
+
+    <fun> int a, int b : Euclid int
+
+    ...
+
+    </fun>
+
+    ...
+
+</module>
+
+</Nova>
+    ...
+
+</html>
+
+```
+
+Nova code can be either in header or body of webpage depending on usage
+
+
+-----
+
 ## Origins
 
 * **Nova** language has its roots in **SGML** and  **HTML** markup languages and **C** and **Pascal** programming languages

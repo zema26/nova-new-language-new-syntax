@@ -187,7 +187,8 @@
             <a href="#oop">5. OOP</a>
             <a href="#inter">6. Intermodular</a>
             <a href="#file">7. File System</a>
-            <a href="#origins">Origins</a>
+            <a href="#html">8. Integration</a>
+            <a href="#origins">9. Origins</a>
         </nav>
 
         <main>
@@ -468,9 +469,52 @@ f.close
 
 <hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
 
+
+<section id="html">
+                <h2>8. Integration with HTML</h2>
+                <p>Nova code can be used inside HTML because they have same syntax.</p>
+
+                <h3>Integration</h3>
+                <p>Just put Nova code inside <code>&lt;Nova&gt; ... &lt;/Nova&gt;</code> block inside of HTML</p>
+                <h3>Example: Integration and HTML</h3>
+                <p>This example demonstrates flexibility and interconnection of Nova language with HTML</p>
+
+<pre><code>&lt;html&gt; 
+
+    ...
+
+&lt;Nova&gt;
+
+&lt;module&gt; Euclidean
+
+    &lt;fun&gt; int a, int b : Euclid int
+
+    ...
+
+    &lt;/fun&gt;
+
+    ...
+
+&lt;/module&gt;
+
+...
+
+&lt;/Nova&gt;
+
+...
+
+&lt;/html&gt;
+
+</code></pre>
+<p> Nova code can be either in header or body of webpage depending on usage</p>
+            </section>
+
+<hr style="border: 0; border-top: 1px solid var(--bg-tertiary);">
+
+
 <section id="origins">
 
-    <h2>Origins</h2>
+    <h2>9. Origins</h2>
 
             <ul>
                     <li><strong>Nova</strong> language has its roots in <strong>SGML</strong> and <strong>HTML</strong> markup languages and in <strong>C</strong> and <strong>Pascal</strong> programming languages</li>
